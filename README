@@ -1,9 +1,25 @@
 node-stomped
+------------
+
 
 A driver/lib to make STOMP brokers and clients for node.js.
 
-todo:
-1. unit test suite
-2. client protocol support
-3. integration test suite
-4. performance tests
+
+Run Tests
+---------
+
+$ npm bundle
+$ ./bin/nodeunit test/unit/
+
+
+TODO
+----
+
+1. client protocol support
+2. integration test suite
+3. performance tests
+
+Known Issues
+------------
+
+Receipt handling is currently broken

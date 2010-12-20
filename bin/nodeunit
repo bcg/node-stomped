@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+require(__dirname + '/.././node_modules/.npm/nodeunit/active/package/bin/nodeunit');
+

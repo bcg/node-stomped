@@ -24,7 +24,7 @@ net.createServer(function (stream) {
     });
 
     proto.on('unsubscribe', function(client, queue) {
-      //subscriptions.rem(client, queue);
+      subscriptions.remove(client, queue);
     });
 
     proto.on('send', function(queue, message) {
@@ -36,7 +36,7 @@ net.createServer(function (stream) {
   // If you wanted to control which clients could get messages
   // (round robin, etc).
   mqueues.on('popable', function(queue, message) {
-    clients = subscriptions.find_clients_by_queue(queue);
+    clients = subscriptions.findClients(queue);
     if (clients.length >= 1) {
       for (var i=0; i<clients.length; i++) {
         clients[i].proto.message(queue, message);
