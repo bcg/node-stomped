@@ -15,9 +15,8 @@ $ ./bin/nodeunit test/unit/
 TODO
 ----
 
-1. client protocol support
-2. integration test suite
-3. performance tests
+1. integration test suite
+2. performance tests
 
 Known Issues
 ------------

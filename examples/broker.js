@@ -28,6 +28,7 @@ net.createServer(function (stream) {
     });
 
     proto.on('send', function(queue, message) {
+      console.log('recv: '+queue+' : '+message);
       mqueues.push(queue, message);
     }); 
 
