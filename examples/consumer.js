@@ -7,8 +7,11 @@ var net = require('net'),
 client = stomp.createClient('127.0.0.1', 61613);
 
 client.on('connected', function() {
-  for (var i=0; i<10; i++)
-    client.send('q', 'message');
+  console.log('connected');
+  client.subscribe('q');
+  client.on('message', function(queue, message) {
+    console.log('received '+queue+' : '+message);
+  });
 });
 
 
